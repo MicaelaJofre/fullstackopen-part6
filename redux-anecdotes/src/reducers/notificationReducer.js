@@ -4,6 +4,7 @@ export const notificationReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case '@notification/set':
+            state.timeout && clearTimeout(state.timeout)
             return action.data
         case '@notification/clear':
             return initialState
